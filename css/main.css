@@ -61,7 +61,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px Georgia, Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
@@ -70,22 +70,22 @@ body {
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL: HYY BLUE Theme
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid #10314E;
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid #10314E;   /*#0060A9;*/
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: #1d4066;
 }
 
 .title {
@@ -111,7 +111,7 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #e44d26;
+    background: #10314E;
 }
 
 nav a:hover,
@@ -158,15 +158,27 @@ nav a:hover {
    ========================================================================== */
 
 
+header .title {
+ height: 72px;
+ width: 390px;
+ margin: 2em 0 2em 0;
+}
 
+a {
+  border-bottom: 1px white dotted;
+  text-decoration: none;
+}
 
+a:hover {
+  border-bottom-style: solid;
+}
 
-
-
-
-
-
-
+footer a, aside a {
+  color: white;
+}
+nav a, header a, nav a:hover, header a:hover {
+  border: none;
+}
 
 
 
@@ -234,6 +246,7 @@ nav a:hover {
     nav {
         float: right;
         width: 38%;
+        margin-top: 4.0em; /* Täsmää yläreunaltaan logon tekstin yläreunaan  */
     }
 
 /* ============
