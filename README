@@ -1,0 +1,10 @@
+
+Helsingin yliopiston ylioppilaskunnan vaalitulospalvelu
+=======================================================
+
+- Static webhosting in Amazon S3
+- New election results will be submitted from the Electoral System
+- For development purposes, run a local node-server:
+  % node server.js
+  --> Open http://localhost:8080
+
