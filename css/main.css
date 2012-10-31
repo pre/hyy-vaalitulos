@@ -180,6 +180,15 @@ nav a, header a, nav a:hover, header a:hover {
   border: none;
 }
 
+ul.horizontal {
+    padding: 0;
+    margin: 0.5em;
+}
+ul.horizontal li {
+    display: block;
+    float: left;
+    margin-right: 1em;
+}
 
 
 
