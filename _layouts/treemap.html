@@ -1,35 +1,7 @@
 ---
-layout: chart
+layout: result_page
 title: "Edustajistopaikkojen jakautuminen"
 ---
-
-<script>
-/*<!-- todo:
-  # minne js talletetaan
-  # mistä d3.js
-  #   <aside>Laskettu <%= friendly_datetime(Time.now)</aside>
-
-*/
-
-  function getUrlParameterByName(name)
-  {
-    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-    var regexS = "[\\?&]" + name + "=([^&#]*)";
-    var regex = new RegExp(regexS);
-    var results = regex.exec(window.location.search);
-    if(results == null)
-      return "";
-    else
-      return decodeURIComponent(results[1].replace(/\+/g, " "));
-  }
-
-  function discoverJsonUrl(defaultPath) {
-    jsonPath = getUrlParameterByName("json");
-    return jsonPath != "" ? jsonPath : "index.json";
-  }
-
-</script>
-
 
 <style>
 
@@ -98,14 +70,17 @@ title: "Edustajistopaikkojen jakautuminen"
 </style>
 
 <p>
-  Tulos laskettu TODO TODO
+  Tulos laskettu:
+  <span class="result" id="created-at">
+    <time datetime=""></time>
+  </span>
 </p>
 
 
 <p id="chart"></p>
 
 <p>
-  Klikkaa solua zoomataksesi sisään; klikkaa otsikkoa zoomataksesi ulos.
+  Klikkaa solua zoomataksesi sisään; klikkaa yläreunan otsikkoa zoomataksesi ulos.
 </p>
 
 <script src="/js/vendor/d3.v2.10.3.min.js"></script>
@@ -154,9 +129,10 @@ grandparent.append("text")
     .attr("dy", "0");
 
 
-d3.json(discoverJsonUrl(), function(root) {
+d3.json(discoverJsonUrl("result.json"), function(root) {
 
   initialize(root);
+  setupOuterContext(root);
   accumulate(root);
   layout(root);
   display(root);
@@ -166,6 +142,21 @@ d3.json(discoverJsonUrl(), function(root) {
     root.dx = width;
     root.dy = height;
     root.depth = 0;
+  }
+
+  function setupOuterContext(root) {
+    if (root.created_at != undefined)
+      setCreatedAt(root.created_at);
+  }
+
+  function setCreatedAt(timestamp) {
+    datetime = new Date(timestamp);
+
+    $(".result#created-at time").each(function(index) {
+      $(this).attr("datetime", timestamp);
+      // TODO: Listen to change event on time element to decouple updating
+      $(this).html( datetime.toLocaleDateString() + " " + datetime.toLocaleTimeString() );
+    });
   }
 
   // Aggregate the values for internal nodes. This is normally done by the

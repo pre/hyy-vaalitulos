@@ -1,16 +1,10 @@
----
-layout: default
----
-
 <header>
 
     <h1>{{ page.title }}</h1>
 
     <ul class="horizontal pagenavi">
-      <li>
-        <a href="result.html?year=2012">Vaalitulos</a>
-      </li>
-      <li><a href="treemap.html?json=koe.json">Paikkojen jakautuminen</a></li>
+      <li><a href="/{{page.year}}">Vaalitulos</a></li>
+      <li><a href="treemap.html">Paikkojen jakautuminen</a></li>
       <li><a href="#">Paikat ryhmittäin</a></li>
       <li><a href="#">Paikat liitoittain</a></li>
       <li><a href="#">Äänestetyimmät ehdokkaat</a></li>
@@ -19,5 +13,3 @@ layout: default
 </header>
 
 <br style="clear: both;" />
-
-{{ content }}
