@@ -182,15 +182,17 @@ nav a, header a, nav a:hover, header a:hover {
 
 ul.horizontal {
     padding: 0;
-    margin: 0.5em;
 }
-ul.horizontal li {
-    display: block;
-    float: left;
-    margin-right: 1em;
+    ul.horizontal li {
+        display: block;
+        float: left;
+        margin-right: 1em;
+    }
+
+ul.horizontal.pagenavi {
+    margin-top: -0.5em;
+    /*padding-bottom: 0.5em;*/
 }
-
-
 
 /* ==========================================================================
    Media Queries
