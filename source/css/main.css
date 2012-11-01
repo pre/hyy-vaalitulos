@@ -157,6 +157,13 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+body {
+   background: #F2F1ED;
+}
+iframe {
+   background: white;
+}
+
 
 header .title {
  height: 72px;
@@ -182,16 +189,50 @@ nav a, header a, nav a:hover, header a:hover {
 
 ul.horizontal {
     padding: 0;
+    overflow: auto;
 }
     ul.horizontal li {
         display: block;
+        list-style-type: none;
         float: left;
-        margin-right: 1em;
+        margin-right: 0;
+        padding: 0 0.5em 0 0.5em;
+    }
+    ul.horizontal li:first-child {
+        padding-left: 0;
+    }
+    ul.horizontal li:last-child {
+        border-right: none;
+    }
+    ul.horizontal li a {
+      text-decoration: none;
+      color: #aaa;
+      font: 80% Helvetica, Verdana, sans-serif;
+      text-transform: uppercase;
+
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    ul.horizontal li a:hover {
+      color: #666;
+    }
+
+    ul.horizontal li.active a {
+      font-weight: bold;
+      color: #333;
     }
 
 ul.horizontal.pagenavi {
     margin-top: -0.5em;
 }
+.pagenavi {
+    margin-bottom: 1.75em;
+}
+
 
 /* ==========================================================================
    Media Queries
