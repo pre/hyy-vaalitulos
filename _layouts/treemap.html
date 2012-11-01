@@ -11,7 +11,12 @@ title: "Edustajistopaikkojen jakautuminen"
     background: white;
     overflow: hidden;
   }
-
+  #chart-container {
+    display: none;
+  }
+  #chart-placeholder {
+    height: 510px;
+  }
 
   .elected {
     font-weight: bold;
@@ -69,19 +74,26 @@ title: "Edustajistopaikkojen jakautuminen"
 
 </style>
 
-<p>
-  Tulos laskettu:
-  <span class="result" id="created-at">
-    <time datetime=""></time>
-  </span>
-</p>
+<div id="chart-placeholder">
+  <p>Vaalitulosta ei ole vielä julkaistu.</p>
+</div>
+
+<div id="chart-container">
+  <p>
+    Tulos laskettu:
+    <span class="result" id="created-at">
+      <time datetime=""></time>
+    </span>
+  </p>
 
 
-<p id="chart"></p>
+  <p id="chart">
+  </p>
 
-<p>
-  Klikkaa solua zoomataksesi sisään; klikkaa yläreunan otsikkoa zoomataksesi ulos.
-</p>
+  <p>
+    Klikkaa solua zoomataksesi sisään; klikkaa yläreunan otsikkoa zoomataksesi ulos.
+  </p>
+</div>
 
 <script src="/js/vendor/d3.v2.10.3.min.js"></script>
 <script>
@@ -131,6 +143,11 @@ grandparent.append("text")
 
 d3.json(discoverJsonUrl("result.json"), function(root) {
 
+  // Data has not been published yet
+  if (root == null) {
+    return false;
+  }
+
   initialize(root);
   setupOuterContext(root);
   accumulate(root);
@@ -145,8 +162,12 @@ d3.json(discoverJsonUrl("result.json"), function(root) {
   }
 
   function setupOuterContext(root) {
-    if (root.created_at != undefined)
+    if (root.created_at != undefined) {
       setCreatedAt(root.created_at);
+    }
+
+    showChartContainer();
+    hideChartPlaceholder();
   }
 
   function setCreatedAt(timestamp) {
@@ -157,6 +178,14 @@ d3.json(discoverJsonUrl("result.json"), function(root) {
       // TODO: Listen to change event on time element to decouple updating
       $(this).html( datetime.toLocaleDateString() + " " + datetime.toLocaleTimeString() );
     });
+  }
+
+  function showChartContainer() {
+    $('#chart-container').show();
+  }
+
+  function hideChartPlaceholder() {
+    $('#chart-placeholder').hide();
   }
 
   // Aggregate the values for internal nodes. This is normally done by the
