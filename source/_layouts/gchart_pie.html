@@ -1,0 +1,90 @@
+---
+layout: result_page
+title: "Edustajistopaikkojen jakautuminen"
+---
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+  function loadResultData(resultPath) {
+    $.ajax({
+      url: resultPath,
+      dataType: 'json',
+      success: function(data) {
+        console.log(data);
+        console.log(data["children"]);
+        for (var i=0; i<data["children"].length;i++) {
+          console.log(data["children"][i]["name"])
+          console.log(data["children"][i]["seats"])
+        }
+      }
+    });
+  }
+
+  // Load the Visualization API and the piechart package.
+  google.load('visualization', '1.0', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+
+  // Create the data table.
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Topping');
+  data.addColumn('number', 'Slices');
+  data.addRows([
+      ['HYAL', 17],
+      ['Osak', 12],
+      ['MP', 11],
+      ['HELP', 8],
+      ['Pelast', 5],
+      ['Pirate', 3],
+      ['SNÄf', 3],
+      ['OSY', 1],
+      ['Tsempp', 0],
+      ['Peruss', 0],
+      ['Libera', 0],
+      ['ITE1', 0],
+  ]);
+  // data.addRows([
+  //   <% result.coalition_results.by_vote_sum.each do |cr| -%>
+  //     ['<%= cr.electoral_coalition.shorten -%>', <%= result.elected_candidates_in_coalition(cr).count -%>],
+  //   <% end -%>
+  // ]);
+
+  // Set chart options
+  var options = {'title':'Tilanne 30.10.2012 klo 15:06:39',
+                 'is3D':false,
+                 'pieSliceText': 'label',
+                 'width':800,
+                 'height':600,
+                 'backgroundColor':'transparent'
+                 };
+
+  // Instantiate and draw our chart, passing in some options.
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+</script>
+
+TODO TODO
+<ul class="seat-listing">
+    <li>HYAL: 17</li>
+    <li>Osak: 12</li>
+    <li>MP: 11</li>
+    <li>HELP: 8</li>
+    <li>Pelast: 5</li>
+    <li>Pirate: 3</li>
+    <li>SNÄf: 3</li>
+    <li>OSY: 1</li>
+    <li>Tsempp: 0</li>
+    <li>Peruss: 0</li>
+    <li>Libera: 0</li>
+    <li>ITE1: 0</li>
+</ul>
+
+<div style="clear: both;" id="chart_div"></div>
