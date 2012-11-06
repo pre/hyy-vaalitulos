@@ -198,12 +198,7 @@ ul.horizontal {
         margin-right: 0;
         padding: 0 0.5em 0 0.5em;
     }
-    ul.horizontal li:first-child {
-        padding-left: 0;
-    }
-    ul.horizontal li:last-child {
-        border-right: none;
-    }
+
     ul.horizontal li a {
       text-decoration: none;
       color: #aaa;
@@ -226,9 +221,23 @@ ul.horizontal {
       color: #333;
     }
 
+ul.seat-listing li {
+  padding: 0em 0.75em;
+  text-align: center;
+  margin-top: 0.5em;
+  border-right: 1px #ccc solid;
+  font-weight: bold;
+  width: 6em;
+}
+
+
 ul.horizontal.pagenavi {
     margin-top: -0.5em;
 }
+    ul.horizontal.pagenavi li:first-child {
+        padding-left: 0;
+    }
+
 .pagenavi {
     margin-bottom: 1.75em;
 }

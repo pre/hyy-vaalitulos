@@ -6,13 +6,12 @@ title: "Edustajistopaikkojen jakautuminen"
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
 
-  var result
   function addRowsFromJson(jsonData, chartData) {
     var rowArray = new Array;
 
     for (var i=0; i<jsonData["children"].length;i++) {
-      var name  = jsonData["children"][i]["name"];
-      var value = jsonData["children"][i]["seats"]
+      var value = jsonData["children"][i]["seats"];
+      var name  = jsonData["children"][i]["name"] + " (" + value + ")";
 
       rowArray.push([name, value]);
     }
@@ -20,13 +19,12 @@ title: "Edustajistopaikkojen jakautuminen"
     chartData.addRows(rowArray);
   }
 
-  function loadResultData(resultPath, chartData) {
+  function loadResultData(resultPath, chartCallback) {
     $.ajax({
       url: resultPath,
       dataType: 'json',
-      async: false, // Because chart is drawn in Google Chart callback
       success: function(jsonData) {
-        addRowsFromJson(jsonData, chartData);
+        chartCallback(jsonData);
       }
     });
   }
@@ -35,21 +33,26 @@ title: "Edustajistopaikkojen jakautuminen"
   google.load('visualization', '1.0', {'packages':['corechart']});
 
   // Set a callback to run when the Google Visualization API is loaded.
-  google.setOnLoadCallback(drawChart);
+  google.setOnLoadCallback(initChart);
+
+  function initChart() {
+    loadResultData("result.json", drawChart);
+  }
 
   // Callback that creates and populates a data table,
   // instantiates the pie chart, passes in the data and
   // draws it.
-  function drawChart() {
+  function drawChart(jsonData) {
 
   // Create the data table.
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Topping');
   data.addColumn('number', 'Slices');
-  loadResultData("result.json", data);
+  addRowsFromJson(jsonData, data);
 
-  // Set chart options
-  var options = {'title':'TODO Tilanne 30.10.2012 klo 15:06:39',
+  var title = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
+
+  var options = {'title':title,
                  'is3D':false,
                  'pieSliceText': 'label',
                  'width':800,
@@ -63,8 +66,7 @@ title: "Edustajistopaikkojen jakautuminen"
 }
 </script>
 
-TODO TODO
-<ul class="seat-listing">
+<ul class="seat-listing horizontal">
     <li>HYAL: 17</li>
     <li>Osak: 12</li>
     <li>MP: 11</li>

@@ -20,3 +20,15 @@ function discoverJsonUrl(defaultPath) {
     ? jsonPath
     : defaultPath;
 }
+
+function friendlyDateTime(datetime, separator) {
+  var separator = separator === undefined
+    ? " klo "
+    : separator;
+
+  var date = new Date(datetime);
+  var friendlyDate = $.datepicker.formatDate('dd.mm.yy', date);
+  var friendlyTime = date.getHours() + ":" + date.getMinutes();
+
+  return friendlyDate + separator + friendlyTime;
+}
