@@ -164,6 +164,9 @@ iframe {
    background: white;
 }
 
+#chart {
+    min-height: 400px;
+}
 
 header .title {
  height: 72px;

@@ -21,15 +21,21 @@ function discoverJsonUrl(defaultPath) {
     : defaultPath;
 }
 
-
-function loadResultData(resultPath, chartCallback) {
+function loadResultData(resultPath, chartCallback, errorCallback) {
   $.ajax({
     url: resultPath,
     dataType: 'json',
     success: function(jsonData) {
       chartCallback(jsonData);
+    },
+    error: function(e) {
+      errorCallback(e);
     }
   });
+}
+
+function displayChartLoadError(e) {
+  $('#chart').append('Virhe tuloksen lataamisessa. Todennäköisesti vaalitulosta ei ole vielä julkaistu.');
 }
 
 function addChartLabels(chartLabelElement, results) {

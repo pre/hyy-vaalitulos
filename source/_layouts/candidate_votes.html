@@ -35,7 +35,7 @@ title: Ehdokkaiden äänimäärät
   google.setOnLoadCallback(initChart);
 
   function initChart() {
-    loadResultData(jsonSourcePath, drawChart);
+    loadResultData(jsonSourcePath, drawChart, displayChartLoadError);
   }
 
   function drawChart(jsonData) {

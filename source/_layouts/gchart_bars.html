@@ -31,7 +31,7 @@ title: "Edustajistopaikat liitoittain"
   google.setOnLoadCallback(initChart);
 
   function initChart() {
-    loadResultData(jsonSourcePath, drawChart);
+    loadResultData(jsonSourcePath, drawChart, displayChartLoadError);
   }
 
   function drawChart(jsonData) {
@@ -72,4 +72,4 @@ title: "Edustajistopaikat liitoittain"
 </ul>
 
 <div style="clear:both;" id="chart"></div>
-</div>
+
