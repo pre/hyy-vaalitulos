@@ -1,30 +1,34 @@
 ---
 layout: result_page
-title: "Edustajistopaikat liitoittain"
+title: Ehdokkaiden äänimäärät
 ---
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-  var jsonSourcePath = "result.json";
+  var jsonSourcePath = "candidates.json";
 
   function addColumnsFromJson(jsonData, chartData, chartLabelElement) {
-    var chartIndex = 1;
     var resultArray = new Array;
+    var labelsArray = new Array;
 
     for (var i=0; i<jsonData["children"].length; i++) {
-      for (var j=0; j<jsonData["children"][i]["children"].length; j++) {
-        var parent = jsonData["children"][i]["children"][j];
-        var value = parent["seats"];
-        var name  = parent["name"];
+      var parent = jsonData["children"][i];
+      var value = parent["votes"];
+      var name  = parent["name"];
+      var labelName = parent["name"] + " (" + parent["allianceShorten"] +")"
 
-        resultArray.push([name, value]);
-        chartData.addColumn('number', name);
-        chartData.setValue(0, chartIndex, value);
-        chartIndex++;
+      resultArray.push([name, value]);
+      if (i<10) {
+        labelsArray.push([labelName,value]);
+      }
+      if (i<100) {
+
+      chartData.addColumn('number', name);
+      chartData.setValue(0, i+1, value);
       }
     }
 
-    addChartLabels(chartLabelElement, resultArray);
+    addChartLabels(chartLabelElement, labelsArray);
   }
 
   google.load("visualization", "1", {packages:["corechart"]});
@@ -36,16 +40,16 @@ title: "Edustajistopaikat liitoittain"
 
   function drawChart(jsonData) {
     var data = new google.visualization.DataTable();
-    var chartLabelElement = $('ul.seat-listing')[0];
+    var chartLabelElement = $('.seat-listing')[0];
 
     data.addRows(1);
     data.addColumn('string');
-    data.setValue(0,0,'Paikkoja');
+    data.setValue(0,0,'Ääniä');
     addColumnsFromJson(jsonData, data, chartLabelElement);
 
     var titleCountedAt = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
 
-    var options = { title: "Liittokohtaiset paikkamäärät",
+    var options = { title: "TOP-100 äänestetyimmät",
                     width: 960,
                     height: 350,
                     backgroundColor: 'transparent',
@@ -54,12 +58,13 @@ title: "Edustajistopaikat liitoittain"
                     chartArea: {left: '0',
                                 top: '5%',
                                 height: 300,
-                                width: '80%'},
+                                width: '100%'},
                     hAxis: {title: titleCountedAt,
                             titleTextStyle: {color: '#222'},
                             showTextEvery: 1,
-                            textPosition: 'out'},
-                    vAxis: {textPosition: 'in'}
+                            textPosition: 'none'},
+                    vAxis: {textPosition: 'in'},
+                    legend: {position: 'none'}
                    };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
@@ -68,8 +73,9 @@ title: "Edustajistopaikat liitoittain"
   }
 </script>
 
-<ul class="seat-listing horizontal">
-</ul>
+<h3>TOP-10 äänestetyimmät</h3>
+<ol class="seat-listing">
+</ol>
 
 <div style="clear:both;" id="chart"></div>
 </div>
