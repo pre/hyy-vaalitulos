@@ -6,17 +6,22 @@ title: "Edustajistopaikat ryhmittäin"
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
 
-  function addRowsFromJson(jsonData, chartData) {
-    var rowArray = new Array;
+  function addRowsFromJson(jsonData, chartData, chartLabelElement) {
+    var rowArray   = new Array;
+    var labelArray = new Array;
 
     for (var i=0; i<jsonData["children"].length;i++) {
-      var value = jsonData["children"][i]["seats"];
-      var name  = jsonData["children"][i]["name"] + " (" + value + ")";
+      var parent = jsonData["children"][i];
+      var value  = parent["seats"];
+      var name   = parent["name"];
+      var nameWithValue   = parent["name"] + " (" + value + ")";
 
-      rowArray.push([name, value]);
+      rowArray.push([nameWithValue, value]);
+      labelArray.push([name, value]);
     }
 
     chartData.addRows(rowArray);
+    addChartLabels(chartLabelElement, labelArray);
   }
 
 
@@ -31,45 +36,35 @@ title: "Edustajistopaikat ryhmittäin"
   // instantiates the pie chart, passes in the data and
   // draws it.
   function drawChart(jsonData) {
+    var data = new google.visualization.DataTable();
+    var chartLabelElement = $('ul.seat-listing')[0];
 
-  // Create the data table.
-  var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Topping');
-  data.addColumn('number', 'Slices');
-  addRowsFromJson(jsonData, data);
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    addRowsFromJson(jsonData, data, chartLabelElement);
 
-  var title = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
+    var title = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
 
-  var options = {'title':title,
-                 titleTextStyle: {fontSize: '14', color: '#222'},
-                 tooltip: {showColorCode: false},
-                 'is3D':false,
-                 'pieSliceText': 'label',
-                 'height':800,
-                 chartArea: {left: '5%', top: '15%', width: '100%'},
-                 'backgroundColor':'transparent'
-                 };
+    var options = {'title':title,
+                   titleTextStyle: {fontSize: '14', color: '#222'},
+                   tooltip: {showColorCode: false},
+                   'is3D':false,
+                   'pieSliceText': 'label',
+                   'height':700,
+                   chartArea: {left: '16',
+                               top: '15%',
+                               height: 550,
+                               width: '100%'},
+                   'backgroundColor':'transparent'
+                   };
 
-  // Instantiate and draw our chart, passing in some options.
-  var chart = new google.visualization.PieChart(document.getElementById('chart'));
-  chart.draw(data, options);
-}
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart'));
+    chart.draw(data, options);
+  }
 </script>
 
-TODO TODO
 <ul class="seat-listing horizontal">
-    <li>HYAL: 17</li>
-    <li>Osak: 12</li>
-    <li>MP: 11</li>
-    <li>HELP: 8</li>
-    <li>Pelast: 5</li>
-    <li>Pirate: 3</li>
-    <li>SNÄf: 3</li>
-    <li>OSY: 1</li>
-    <li>Tsempp: 0</li>
-    <li>Peruss: 0</li>
-    <li>Libera: 0</li>
-    <li>ITE1: 0</li>
 </ul>
 
 <div style="clear: both;" id="chart"></div>

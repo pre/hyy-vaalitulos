@@ -32,6 +32,12 @@ function loadResultData(resultPath, chartCallback) {
   });
 }
 
+function addChartLabels(chartLabelElement, results) {
+  for (var i=0; i<results.length; i++) {
+    var labelTag = '<li>'+  results[i][0] +": " + results[i][1] +'</li>';
+    $(chartLabelElement).append(labelTag);
+  }
+}
 
 function friendlyDateTime(datetime, separator) {
   var separator = separator === undefined
