@@ -1,0 +1,93 @@
+---
+layout: result_page
+title: "Edustajistopaikat liitoittain"
+---
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+  function addColumnsFromJson(jsonData, chartData) {
+    var columnArray = new Array;
+    var chartIndex = 1;
+
+    for (var i=0; i<jsonData["children"].length; i++) {
+      for (var j=0; j<jsonData["children"][i]["children"].length; j++) {
+        console.log(jsonData["children"][i]["children"][j]["name"])
+        var value = jsonData["children"][i]["children"][j]["seats"];
+        var name  = jsonData["children"][i]["children"][j]["name"];
+
+        chartData.addColumn('number', name);
+        console.log("1+j: " + chartIndex + ";; value: "+ value)
+        chartData.setValue(0, chartIndex, value);
+        chartIndex++;
+      }
+    }
+  }
+
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(initChart);
+
+  function initChart() {
+    loadResultData("result.json", drawChart);
+  }
+
+  function drawChart(jsonData) {
+    var data = new google.visualization.DataTable();
+
+    data.addRows(1);
+    data.addColumn('string');
+    data.setValue(0,0,'Paikkoja');
+    addColumnsFromJson(jsonData, data);
+
+    var options = {width: 960, height: 600,
+        title: 'Liittokohtaiset paikkamäärät',
+                      backgroundColor:'transparent',
+                      axisTitlesPosition: 'in',
+                      titlePosition: 'in',
+                      hAxis: {title: 'Tilanne 30.10.2012 klo 15:06:39',
+                              titleTextStyle: {color: '#222'},
+                              showTextEvery: 1,
+                              textPosition: 'in'},
+                      vAxis: {textPosition: 'in'}
+                     };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
+
+    chart.draw(data, options);
+  }
+</script>
+
+TODO TODO
+<ul class="seat-listing horizontal">
+      <li>HyVi: 6</li>
+      <li>SitVas: 5</li>
+      <li>Humani: 4</li>
+      <li>Viikki: 4</li>
+      <li>Pirate: 3</li>
+      <li>Pykälä: 3</li>
+      <li>Kumpul: 3</li>
+      <li>LKSHLK: 3</li>
+      <li>Käytti: 2</li>
+      <li>ESO: 2</li>
+      <li>Kok1: 2</li>
+      <li>EKY: 2</li>
+      <li>Valtio: 2</li>
+      <li>Teolog: 2</li>
+      <li>HO-Nat: 2</li>
+      <li>EPO: 2</li>
+      <li>Kok2: 1</li>
+      <li>DG: 2</li>
+      <li>PPO: 1</li>
+      <li>Kesk: 1</li>
+      <li>SavO: 1</li>
+      <li>KSOVSO: 1</li>
+      <li>OSY: 1</li>
+      <li>StudO: 1</li>
+      <li>SatESO: 1</li>
+      <li>Nation: 1</li>
+      <li>CodTho: 1</li>
+      <li>KD: 1</li>
+</ul>
+
+<div style="clear:both; margin-left:-100px; padding:0;" id="chart"></div>
+</div>

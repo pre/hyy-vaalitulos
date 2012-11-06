@@ -21,6 +21,18 @@ function discoverJsonUrl(defaultPath) {
     : defaultPath;
 }
 
+
+function loadResultData(resultPath, chartCallback) {
+  $.ajax({
+    url: resultPath,
+    dataType: 'json',
+    success: function(jsonData) {
+      chartCallback(jsonData);
+    }
+  });
+}
+
+
 function friendlyDateTime(datetime, separator) {
   var separator = separator === undefined
     ? " klo "
