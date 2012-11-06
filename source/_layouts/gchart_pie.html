@@ -29,7 +29,7 @@ title: "Edustajistopaikat ryhmittäin"
   google.setOnLoadCallback(initChart);
 
   function initChart() {
-    loadResultData("result.json", drawChart, displayChartLoadError);
+    loadResultData(discoverJsonUrl("result.json"), drawChart, displayChartLoadError);
   }
 
   // Callback that creates and populates a data table,

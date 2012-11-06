@@ -5,7 +5,7 @@ title: Ehdokkaiden äänimäärät
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-  var jsonSourcePath = "candidates.json";
+  var jsonSourcePath = discoverJsonUrl("candidates.json");
 
   function addColumnsFromJson(jsonData, chartData, chartLabelElement) {
     var resultArray = new Array;
