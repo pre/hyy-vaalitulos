@@ -53,10 +53,12 @@ title: "Edustajistopaikkojen jakautuminen"
   var title = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
 
   var options = {'title':title,
+                 titleTextStyle: {fontSize: '14', color: '#222'},
+                 tooltip: {showColorCode: false},
                  'is3D':false,
                  'pieSliceText': 'label',
-                 'width':800,
-                 'height':600,
+                 'height':800,
+                 chartArea: {left: '5%', top: '15%', width: '100%'},
                  'backgroundColor':'transparent'
                  };
 
