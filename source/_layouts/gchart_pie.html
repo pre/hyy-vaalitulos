@@ -6,17 +6,27 @@ title: "Edustajistopaikkojen jakautuminen"
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
 
-  function loadResultData(resultPath) {
+  var result
+  function addRowsFromJson(jsonData, chartData) {
+    var rowArray = new Array;
+
+    for (var i=0; i<jsonData["children"].length;i++) {
+      var name  = jsonData["children"][i]["name"];
+      var value = jsonData["children"][i]["seats"]
+
+      rowArray.push([name, value]);
+    }
+
+    chartData.addRows(rowArray);
+  }
+
+  function loadResultData(resultPath, chartData) {
     $.ajax({
       url: resultPath,
       dataType: 'json',
-      success: function(data) {
-        console.log(data);
-        console.log(data["children"]);
-        for (var i=0; i<data["children"].length;i++) {
-          console.log(data["children"][i]["name"])
-          console.log(data["children"][i]["seats"])
-        }
+      async: false, // Because chart is drawn in Google Chart callback
+      success: function(jsonData) {
+        addRowsFromJson(jsonData, chartData);
       }
     });
   }
@@ -36,28 +46,10 @@ title: "Edustajistopaikkojen jakautuminen"
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Topping');
   data.addColumn('number', 'Slices');
-  data.addRows([
-      ['HYAL', 17],
-      ['Osak', 12],
-      ['MP', 11],
-      ['HELP', 8],
-      ['Pelast', 5],
-      ['Pirate', 3],
-      ['SNÄf', 3],
-      ['OSY', 1],
-      ['Tsempp', 0],
-      ['Peruss', 0],
-      ['Libera', 0],
-      ['ITE1', 0],
-  ]);
-  // data.addRows([
-  //   <% result.coalition_results.by_vote_sum.each do |cr| -%>
-  //     ['<%= cr.electoral_coalition.shorten -%>', <%= result.elected_candidates_in_coalition(cr).count -%>],
-  //   <% end -%>
-  // ]);
+  loadResultData("result.json", data);
 
   // Set chart options
-  var options = {'title':'Tilanne 30.10.2012 klo 15:06:39',
+  var options = {'title':'TODO Tilanne 30.10.2012 klo 15:06:39',
                  'is3D':false,
                  'pieSliceText': 'label',
                  'width':800,
@@ -66,7 +58,7 @@ title: "Edustajistopaikkojen jakautuminen"
                  };
 
   // Instantiate and draw our chart, passing in some options.
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.PieChart(document.getElementById('chart'));
   chart.draw(data, options);
 }
 </script>
@@ -87,4 +79,4 @@ TODO TODO
     <li>ITE1: 0</li>
 </ul>
 
-<div style="clear: both;" id="chart_div"></div>
+<div style="clear: both;" id="chart"></div>
