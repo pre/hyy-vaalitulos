@@ -145,6 +145,11 @@ nav a:hover {
     padding: 20px 0;
 }
 
+header .title {
+    width: 285px;
+    margin: 2em 0 2em 0;
+}
+
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -165,14 +170,9 @@ iframe {
 }
 
 #chart {
-    min-height: 400px;
+    min-height: 500px;
 }
 
-header .title {
- height: 72px;
- width: 390px;
- margin: 2em 0 2em 0;
-}
 
 a {
   border-bottom: 1px white dotted;
@@ -256,6 +256,11 @@ ul.horizontal.pagenavi {
     INTERMEDIATE: Menu
    ==================== */
 
+   header .title {
+       height: 72px;
+       width: 390px;
+   }
+
     nav a {
         float: left;
         width: 27%;
@@ -290,6 +295,9 @@ ul.horizontal.pagenavi {
 /* ====================
     WIDE: CSS3 Effects
    ==================== */
+   nav a {
+    font-size: 80%;
+   }
 
     .header-container,
     .main aside {
@@ -332,6 +340,10 @@ ul.horizontal.pagenavi {
 /* ===============
     Maximal Width
    =============== */
+
+   nav a {
+    font-size: 100%;
+   }
 
     .wrapper {
         width: 1026px; /* 1140px - 10% for margins */

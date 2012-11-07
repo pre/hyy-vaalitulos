@@ -22,9 +22,8 @@ title: Ehdokkaiden äänimäärät
         labelsArray.push([labelName,value]);
       }
       if (i<100) {
-
-      chartData.addColumn('number', name);
-      chartData.setValue(0, i+1, value);
+        chartData.addColumn('number', name);
+        chartData.setValue(0, i+1, value);
       }
     }
 
@@ -50,7 +49,7 @@ title: Ehdokkaiden äänimäärät
     var titleCountedAt = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
 
     var options = { title: "TOP-100 äänestetyimmät",
-                    width: 960,
+                    width: 'auto', //760,
                     height: 350,
                     backgroundColor: 'transparent',
                     axisTitlesPosition: 'in',
