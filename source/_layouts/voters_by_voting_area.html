@@ -1,0 +1,52 @@
+---
+layout: result_page
+title: Äänimäärät alueittain
+---
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(initChart);
+
+  function initChart() {
+    loadResultData("voters_by_voting_area.json",
+      drawChart,
+      displayChartLoadError
+    )
+  }
+
+  function drawChart(jsonData) {
+
+    getDataArray = function(rawData) {
+      var dataArray = [];
+
+      dataArray.push(['Alue', 'Ääniä']);
+
+      rawData.children.forEach(function(area) {
+        dataArray.push([area.code + " " + area.name, area.votes])
+      });
+
+      return dataArray;
+    };
+
+    var data = google.visualization.arrayToDataTable(
+      getDataArray(jsonData)
+    );
+
+    var options = {
+      title: 'Äänimäärät alueittain',
+      legend: {position: 'none'},
+      chartArea: {left: '40',
+                  width: '95%'},
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
+
+    chart.draw(data, options);
+
+  }
+
+</script>
+
+<div id="chart"></div>
