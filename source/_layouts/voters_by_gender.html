@@ -32,21 +32,28 @@ title: Äänestäjät sukupuolen mukaan
   function initChart() {
     loadResultData("voters_by_gender.json",
       drawCharts,
-      displayChartLoadError
+      displayBetterChartLoadError
     )
   }
 
   function drawCharts(jsonData) {
-    var optionsVoted = {
-      title: 'Äänestäneitä'
+    var optionsCommon = {
+      titleTextStyle: {fontSize: '14', color: '#222'},
+      tooltip: {showColorCode: false},
+      'is3D':false,
+      'pieSliceText': 'label',
+      'height': '500',
+      chartArea: {left: '0',
+                  top: '15%',
+                  height: 400,
+                  width: '100%'},
+      'backgroundColor':'transparent'
     };
 
-    var optionsTotal = {
-      title: 'Äänioikeutettuja'
-    };
-
+    var optionsVoted = $.extend({}, optionsCommon, {title: "Äänestäneitä"})
     drawChart("chartVoted", getDataArrayForVoted(jsonData), optionsVoted);
 
+    var optionsTotal = $.extend({}, optionsCommon, {title: "Äänioikeutettuja"})
     drawChart("chartTotal", getDataArrayForTotal(jsonData), optionsTotal);
 
   }
@@ -61,6 +68,6 @@ title: Äänestäjät sukupuolen mukaan
   }
 </script>
 
-
+<div id="error"></div>
 <div id="chartVoted" class="chart" style="float:left;"></div>
 <div id="chartTotal" class="chart" style="float:left;"></div>

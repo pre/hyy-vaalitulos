@@ -38,6 +38,10 @@ function displayChartLoadError(e) {
   $('#chart').append('Virhe tuloksen lataamisessa. Todennäköisesti vaalitulosta ei ole vielä julkaistu.');
 }
 
+function displayBetterChartLoadError() {
+  $('#error').append('Virhe tuloksen lataamisessa. Todennäköisesti vaalitulosta ei ole vielä julkaistu.');
+}
+
 function addChartLabels(chartLabelElement, results) {
   for (var i=0; i<results.length; i++) {
     var labelTag = '<li>'+  results[i][0] +": " + results[i][1] +'</li>';
