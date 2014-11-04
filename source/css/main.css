@@ -177,7 +177,7 @@ iframe.result {
    padding-top: 0.75em;
 }
 
-#chart {
+#chart, .chart {
     min-height: 400px;
 }
 

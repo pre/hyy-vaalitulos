@@ -1,0 +1,66 @@
+---
+layout: result_page
+title: Äänestäjät sukupuolen mukaan
+---
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+
+  google.setOnLoadCallback(initChart);
+
+  getDataArrayForVoted = function(rawData) {
+    var dataArray = [];
+
+    dataArray.push(['Sukupuoli', 'Äänestäneitä']);
+    dataArray.push(["Nainen", rawData.children.voted.women])
+    dataArray.push(["Mies", rawData.children.voted.men])
+
+    return dataArray;
+  };
+
+  getDataArrayForTotal = function(rawData) {
+    var dataArray = [];
+
+    dataArray.push(['Sukupuoli', 'Äänioikeutettuja']);
+    dataArray.push(["Nainen", rawData.children.total.women])
+    dataArray.push(["Mies", rawData.children.total.men])
+
+    return dataArray;
+  };
+
+  function initChart() {
+    loadResultData("voters_by_gender.json",
+      drawCharts,
+      displayChartLoadError
+    )
+  }
+
+  function drawCharts(jsonData) {
+    var optionsVoted = {
+      title: 'Äänestäneitä'
+    };
+
+    var optionsTotal = {
+      title: 'Äänioikeutettuja'
+    };
+
+    drawChart("chartVoted", getDataArrayForVoted(jsonData), optionsVoted);
+
+    drawChart("chartTotal", getDataArrayForTotal(jsonData), optionsTotal);
+
+  }
+
+  function drawChart(elementId, jsonData, options) {
+
+    var data = google.visualization.arrayToDataTable(jsonData);
+
+    var chart = new google.visualization.PieChart(document.getElementById(elementId));
+
+    chart.draw(data, options);
+  }
+</script>
+
+
+<div id="chartVoted" class="chart" style="float:left;"></div>
+<div id="chartTotal" class="chart" style="float:left;"></div>
