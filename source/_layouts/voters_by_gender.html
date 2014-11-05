@@ -52,10 +52,20 @@ title: Äänestäjät sukupuolen mukaan
 
     var optionsVoted = $.extend({}, optionsCommon, {title: "Äänestäneitä"})
     drawChart("chartVoted", getDataArrayForVoted(jsonData), optionsVoted);
+    writeChartCaption("#chartVotedCaption", jsonData.children.voted);
 
     var optionsTotal = $.extend({}, optionsCommon, {title: "Äänioikeutettuja"})
     drawChart("chartTotal", getDataArrayForTotal(jsonData), optionsTotal);
+    writeChartCaption("#chartTotalCaption", jsonData.children.total);
 
+  }
+
+  function writeChartCaption(elementId, jsonData) {
+    var element = $(elementId);
+
+    element.append("<dt>Nainen</dt><dd>"+ jsonData.women +"</dd>")
+    element.append("<dt>Mies</dt><dd>"+ jsonData.men +"</dd>")
+    element.append("<dt>Ei tiedossa</dt><dd>"+ jsonData.unknown +"</dd>")
   }
 
   function drawChart(elementId, jsonData, options) {
@@ -71,3 +81,11 @@ title: Äänestäjät sukupuolen mukaan
 <div id="error"></div>
 <div id="chartVoted" class="chart" style="float:left;"></div>
 <div id="chartTotal" class="chart" style="float:left;"></div>
+<div class="chartDescription" style="width: 400px; clear: both; float: left;">
+  <dl id="chartVotedCaption">
+  </dl>
+</div>
+<div class="chartDescription" style="float:left;">
+  <dl id="chartTotalCaption">
+  </dl>
+</div>

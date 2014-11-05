@@ -181,6 +181,19 @@ iframe.result {
     min-height: 400px;
 }
 
+.chartDescription dt {
+  float: left;
+  display: block;
+  clear: left;
+
+}
+
+.chartDescription dd {
+  display: block;
+  float: left;
+  text-align: right;
+  margin-left: 1em;
+}
 
 a {
   border-bottom: 1px white dotted;
