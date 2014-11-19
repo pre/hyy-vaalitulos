@@ -3,6 +3,22 @@ layout: result_page
 title: HYYn edustajistovaalitulos
 ---
 
+<h3>Äänet alueittain</h3>
+
+<ul class="horizontal voting-areas">
+  {% assign early_areas = "EI|EII|EIII|EIV|EV" | split: "|" %}
+  {% for area in early_areas %}
+    <li><a href="alueittain/{{ area }}.html">{{ area }}</a></li>
+  {% endfor %}
+
+  {% assign areas = "I+XIV|II|III|IV|V|VI|VII+VIII|IX|X|XI|XII+XIII" | split: "|" %}
+  {% for area in areas %}
+    <li><a href="alueittain/{{ area }}.html">{{ area }}</a></li>
+  {% endfor %}
+</ul>
+
+<h3>Vaalitulos</h3>
+
 <p>
   Vaalituloksen suora osoite (esim. tulostamista tai arkistointia varten): <br>
   &raquo; <a href="/{{page.year}}/result.html">http://vaalitulos.hyy.fi/{{page.year}}/result.html</a>
