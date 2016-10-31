@@ -18,12 +18,8 @@ HYYn vaalitulospalvelu
 - Start Jekyll server for development:
   `./server.js`
 
-- Setup AWS credentials in `_jekyll_s3.yml`:
-~~~
-  s3_id: AWS Access Key ID
-  s3_secret: AWS Secret Access Key
-  s3_bucket: vaalitulos.hyy.fi (or vaalitulos-staging)
-~~~
+- Setup AWS credentials in `_jekyll_s3.yml`
+  - Example of contents: [_jekyll_s3.yml.example](_jekyll_s3.yml.example)
 
 - Deploy:
   `jekyll-s3`

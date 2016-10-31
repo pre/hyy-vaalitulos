@@ -1,0 +1,3 @@
+s3_id: AWS Access Key ID
+s3_secret: AWS Secret Access Key
+s3_bucket: vaalitulos.hyy.fi (or vaalitulos-staging)
