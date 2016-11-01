@@ -3,6 +3,7 @@ layout: result_page
 title: HYYn edustajistovaalitulos
 ---
 
+{% if page.year == 2014 %}
 <h3>Äänet alueittain</h3>
 
 <ul class="horizontal voting-areas">
@@ -16,6 +17,7 @@ title: HYYn edustajistovaalitulos
     <li><a href="alueittain/{{ area }}.html">{{ area }}</a></li>
   {% endfor %}
 </ul>
+{% endif %}
 
 <h3>Vaalitulos</h3>
 
