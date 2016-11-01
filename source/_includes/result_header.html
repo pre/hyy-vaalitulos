@@ -2,14 +2,28 @@
 
     <h1>{{ page.title }} {{ page.year }}</h1>
 
-    <ul class="horizontal pagenavi">
-      <li><a href="/{{page.year}}">Vaalitulos</a></li>
-      <li><a href="voting_percentage.html">Äänestys-%</a></li>
-      <li><a href="voters_by_voting_area.html">Äänet alueittain</a></li>
-      <li><a href="treemap.html">Paikkojen jakautuminen</a></li>
-      <li><a href="coalitions.html">Ryhmittäin</a></li>
-      <li><a href="alliances.html">Liitoittain</a></li>
-      <li><a href="candidates.html">Ehdokkaat</a></li>
-    </ul>
+    {% if page.year >= 2016 %}
+        <ul class="horizontal pagenavi">
+          <li><a href="/{{page.year}}">Vaalitulos</a></li>
+          <li><a href="voting_percentage.html">Äänestys-%</a></li>
+          <li><a href="voters_by_voting_area.html">Äänestysaktiivisuus</a></li>
+          <li><a href="treemap.html">Paikkojen jakautuminen</a></li>
+          <li><a href="coalitions.html">Ryhmittäin</a></li>
+          <li><a href="alliances.html">Liitoittain</a></li>
+          <li><a href="candidates.html">Ehdokkaat</a></li>
+        </ul>
+    {% endif %}
+
+    {% if page.year <= 2014 %}
+        <ul class="horizontal pagenavi">
+          <li><a href="/{{page.year}}">Vaalitulos</a></li>
+          <li><a href="voting_percentage.html">Äänestys-%</a></li>
+          <li><a href="voters_by_voting_area.html">Äänet alueittain</a></li>
+          <li><a href="treemap.html">Paikkojen jakautuminen</a></li>
+          <li><a href="coalitions.html">Ryhmittäin</a></li>
+          <li><a href="alliances.html">Liitoittain</a></li>
+          <li><a href="candidates.html">Ehdokkaat</a></li>
+        </ul>
+    {% endif %}
 
 </header>
