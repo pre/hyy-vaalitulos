@@ -69,6 +69,36 @@ body {
     margin: 0 5%;
 }
 
+
+/* ==================================================
+    ALL: Sticky footer on bottom.
+    Content has 100% height,
+    footer has height: H
+    footer is lifter up with negative margin-top: -H
+   ================================================= */
+html, body, .content-container {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body > .content-container {
+    height: auto;
+    min-height: 100%;
+}
+.main-container {
+    padding-bottom: 4.5em; /* height of .footer-container */
+}
+.footer-container {
+    clear: both;
+    position: relative;
+    height: 4.5em;
+    margin-top: -4.5em; /* height of .cooter-container */
+}
+
+.footer-container footer {
+    color: white;
+}
+
 /* ===================
     ALL: HYY BLUE Theme
    =================== */
@@ -92,7 +122,6 @@ body {
 .title {
     color: white;
 }
-
 
 .logo {
     display: inline-block;
@@ -164,12 +193,6 @@ nav a:hover {
     color: white;
     padding: 0px 5% 10px;
 }
-
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
-}
-
 
 /* ===============
     ALL: IE Fixes
