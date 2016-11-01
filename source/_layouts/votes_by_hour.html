@@ -1,0 +1,62 @@
+---
+layout: result_page
+title: Äänestäjät ajanhetken mukaan
+---
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages': ['corechart']});
+  google.charts.setOnLoadCallback(initChart);
+
+  function initChart() {
+    loadResultData(
+      discoverJsonUrl('votes_by_hour.json'),
+      drawVisualization,
+      displayChartLoadError
+    );
+  }
+
+  function addRowsFromJson(jsonData, chartData) {
+    var rowArray = new Array;
+
+    for (var i = 0; i < jsonData.children.votes.length; i++) {
+      var row = jsonData.children.votes[i];
+      rowArray.push([
+        row.time,
+        row.hourly_count,
+        row.cumulative_count,
+      ]);
+    }
+
+    chartData.addRows(rowArray);
+  }
+
+  function drawVisualization(jsonData) {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Tunti');
+    data.addColumn('number', 'Ääniä tunnissa');
+    data.addColumn('number', 'Ääniä yhteensä');
+
+    addRowsFromJson(jsonData, data);
+
+    var options = {
+      title: 'Äänestäneiden lukumäärä per tunti',
+      vAxes: {
+        0: { logScale: false, title: 'Ääniä tunnissa' },
+        1: { logScale: false, title: 'Ääniä yhteensä' },
+      },
+      hAxis: { title: 'Tunti' },
+      seriesType: 'line',
+
+      series: {
+        0: { targetAxisIndex: 0 },
+        1: { type: 'line', targetAxisIndex: 1 },
+      },
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart'));
+    chart.draw(data, options);
+  }
+</script>
+
+ <div id="chart" style="width: 900px; height: 500px;"></div>
