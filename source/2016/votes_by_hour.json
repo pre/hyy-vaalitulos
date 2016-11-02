@@ -1,0 +1,254 @@
+{
+  "name": "Äänten lukumäärä tunneittain",
+  "year": 2016,
+  "created_at": "2016-11-02T18:05:13.281+02:00",
+  "children": {
+    "votes": [
+      {
+        "time": "2016-10-26 10:59",
+        "hourly_count": 491,
+        "cumulative_count": 491
+      },
+      {
+        "time": "2016-10-26 11:59",
+        "hourly_count": 441,
+        "cumulative_count": 932
+      },
+      {
+        "time": "2016-10-26 12:59",
+        "hourly_count": 318,
+        "cumulative_count": 1250
+      },
+      {
+        "time": "2016-10-26 13:59",
+        "hourly_count": 258,
+        "cumulative_count": 1508
+      },
+      {
+        "time": "2016-10-26 14:59",
+        "hourly_count": 250,
+        "cumulative_count": 1758
+      },
+      {
+        "time": "2016-10-26 15:59",
+        "hourly_count": 168,
+        "cumulative_count": 1926
+      },
+      {
+        "time": "2016-10-26 16:59",
+        "hourly_count": 151,
+        "cumulative_count": 2077
+      },
+      {
+        "time": "2016-10-26 18:05",
+        "hourly_count": 139,
+        "cumulative_count": 2216
+      },
+      {
+        "time": "2016-10-27 10:59",
+        "hourly_count": 114,
+        "cumulative_count": 2330
+      },
+      {
+        "time": "2016-10-27 11:59",
+        "hourly_count": 126,
+        "cumulative_count": 2456
+      },
+      {
+        "time": "2016-10-27 12:59",
+        "hourly_count": 155,
+        "cumulative_count": 2611
+      },
+      {
+        "time": "2016-10-27 13:59",
+        "hourly_count": 99,
+        "cumulative_count": 2710
+      },
+      {
+        "time": "2016-10-27 14:59",
+        "hourly_count": 102,
+        "cumulative_count": 2812
+      },
+      {
+        "time": "2016-10-27 15:59",
+        "hourly_count": 87,
+        "cumulative_count": 2899
+      },
+      {
+        "time": "2016-10-27 16:59",
+        "hourly_count": 76,
+        "cumulative_count": 2975
+      },
+      {
+        "time": "2016-10-27 18:05",
+        "hourly_count": 88,
+        "cumulative_count": 3063
+      },
+      {
+        "time": "2016-10-28 10:59",
+        "hourly_count": 54,
+        "cumulative_count": 3117
+      },
+      {
+        "time": "2016-10-28 11:59",
+        "hourly_count": 71,
+        "cumulative_count": 3188
+      },
+      {
+        "time": "2016-10-28 12:59",
+        "hourly_count": 72,
+        "cumulative_count": 3260
+      },
+      {
+        "time": "2016-10-28 13:59",
+        "hourly_count": 84,
+        "cumulative_count": 3344
+      },
+      {
+        "time": "2016-10-28 14:59",
+        "hourly_count": 63,
+        "cumulative_count": 3407
+      },
+      {
+        "time": "2016-10-28 15:59",
+        "hourly_count": 66,
+        "cumulative_count": 3473
+      },
+      {
+        "time": "2016-10-28 16:59",
+        "hourly_count": 81,
+        "cumulative_count": 3554
+      },
+      {
+        "time": "2016-10-28 18:05",
+        "hourly_count": 62,
+        "cumulative_count": 3616
+      },
+      {
+        "time": "2016-10-31 10:59",
+        "hourly_count": 87,
+        "cumulative_count": 3703
+      },
+      {
+        "time": "2016-10-31 11:59",
+        "hourly_count": 122,
+        "cumulative_count": 3825
+      },
+      {
+        "time": "2016-10-31 12:59",
+        "hourly_count": 115,
+        "cumulative_count": 3940
+      },
+      {
+        "time": "2016-10-31 13:59",
+        "hourly_count": 246,
+        "cumulative_count": 4186
+      },
+      {
+        "time": "2016-10-31 14:59",
+        "hourly_count": 215,
+        "cumulative_count": 4401
+      },
+      {
+        "time": "2016-10-31 15:59",
+        "hourly_count": 155,
+        "cumulative_count": 4556
+      },
+      {
+        "time": "2016-10-31 16:59",
+        "hourly_count": 115,
+        "cumulative_count": 4671
+      },
+      {
+        "time": "2016-10-31 18:05",
+        "hourly_count": 120,
+        "cumulative_count": 4791
+      },
+      {
+        "time": "2016-11-01 10:59",
+        "hourly_count": 135,
+        "cumulative_count": 4926
+      },
+      {
+        "time": "2016-11-01 11:59",
+        "hourly_count": 107,
+        "cumulative_count": 5033
+      },
+      {
+        "time": "2016-11-01 12:59",
+        "hourly_count": 142,
+        "cumulative_count": 5175
+      },
+      {
+        "time": "2016-11-01 13:59",
+        "hourly_count": 107,
+        "cumulative_count": 5282
+      },
+      {
+        "time": "2016-11-01 14:59",
+        "hourly_count": 101,
+        "cumulative_count": 5383
+      },
+      {
+        "time": "2016-11-01 15:59",
+        "hourly_count": 95,
+        "cumulative_count": 5478
+      },
+      {
+        "time": "2016-11-01 16:59",
+        "hourly_count": 97,
+        "cumulative_count": 5575
+      },
+      {
+        "time": "2016-11-01 18:05",
+        "hourly_count": 108,
+        "cumulative_count": 5683
+      },
+      {
+        "time": "2016-11-02 10:59",
+        "hourly_count": 477,
+        "cumulative_count": 6160
+      },
+      {
+        "time": "2016-11-02 11:59",
+        "hourly_count": 369,
+        "cumulative_count": 6529
+      },
+      {
+        "time": "2016-11-02 12:59",
+        "hourly_count": 357,
+        "cumulative_count": 6886
+      },
+      {
+        "time": "2016-11-02 13:59",
+        "hourly_count": 295,
+        "cumulative_count": 7181
+      },
+      {
+        "time": "2016-11-02 14:59",
+        "hourly_count": 299,
+        "cumulative_count": 7480
+      },
+      {
+        "time": "2016-11-02 15:59",
+        "hourly_count": 277,
+        "cumulative_count": 7757
+      },
+      {
+        "time": "2016-11-02 16:59",
+        "hourly_count": 295,
+        "cumulative_count": 8052
+      },
+      {
+        "time": "2016-11-02 18:05",
+        "hourly_count": 377,
+        "cumulative_count": 8429
+      }
+    ],
+    "total": {
+      "vote_count": 8429,
+      "voter_count": 26664,
+      "percentage": 31.61
+    }
+  }
+}
