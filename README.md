@@ -13,7 +13,10 @@ HYYn vaalitulospalvelu
 ## Setup
 
 - Install dependencies:
-  `bundle install`
+  - See .ruby-version for VERSION, then
+   `rvm install VERSION && cd .. && cd -`
+  - `gem install bundler`
+  - `bundle install`
 
 - Start Jekyll server for development:
   `./server.js`
