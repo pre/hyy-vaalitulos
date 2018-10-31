@@ -9,6 +9,8 @@ HYYn vaalitulospalvelu
   - candidates.json
   - result.json
 
+- See `git show 9236fe` for an example how to setup a new election year.
+
 
 ## Setup
 
