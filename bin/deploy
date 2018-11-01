@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
+set -e
+
 echo "Deploying to:"
-echo ""
+echo -n "  "
 cat _jekyll_s3.yml |grep -v '^\#' |grep s3_bucket
+echo ""
+echo "Ensure you don't have 'jekyll watch' running."
 echo ""
 echo "Continue?"
 read wat
+
+jekyll build
 
 jekyll-s3

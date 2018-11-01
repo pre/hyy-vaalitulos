@@ -21,13 +21,13 @@ HYYn vaalitulospalvelu
   - `bundle install`
 
 - Start Jekyll server for development:
-  `./server.js`
+  `bin/serve`
 
 - Setup AWS credentials in `_jekyll_s3.yml`
   - Example of contents: [_jekyll_s3.yml.example](_jekyll_s3.yml.example)
 
 - Deploy:
-  `jekyll-s3`
+  `bin/deploy`
 
   - Answer [K]eep all when asked about keeping old files:
   `xyz/ is on S3 but not in your _site directory anymore. Do you want to [d]elete, [D]elete all, [k]eep, [K]eep all?`
