@@ -7,6 +7,7 @@ title: Edustajistovaalien äänestysprosentti
 
 <script>
       google.setOnLoadCallback(drawChart);
+
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Vuosi', 'HYY', 'Valtakunnallinen'],
@@ -61,14 +62,51 @@ title: Edustajistovaalien äänestysprosentti
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart'));
-
         chart.draw(data, options);
+
+        var jsonSourcePath = discoverJsonUrl("votes_by_faculty.json");
+        loadResultData(jsonSourcePath, drawByFaculties, displayChartLoadError);
+      }
+
+      function displayChartLoadError() {
+        console.error("Could not load json :/");
+      }
+
+      function drawByFaculties(jsonData) {
+        rows = [];
+        rows.push(['Tiedekunta', 'Ääniä', 'Äänestäjiä', 'Äänestysprosentti']);
+
+        jsonData["children"]["faculties"].map((faculty) => {
+          rows.push([faculty.name, faculty.voter_count, faculty.voted_count, faculty.percentage])
+        });
+
+        var data = google.visualization.arrayToDataTable(rows);
+
+        var options = {
+          title: "Äänestysaktiivisuus tiedekunnittain 2018",
+          width: 'auto',
+          height: 350,
+          series: {
+            0: {targetAxisIndex: 0},
+            1: {targetAxisIndex: 0},
+            2: {targetAxisIndex: 1}
+          },
+          vAxes: {
+            0: {title: 'Ääniä'},
+            1: {title: 'Äänestysprosentti'}
+          }
+        };
+
+        var byFaculties = new google.visualization.ColumnChart(document.getElementById('by-faculties'));
+        byFaculties.draw(data, options);
       }
 </script>
 
 <div id="chart"></div>
 
 <p>Äänestysprosentti 2016: <strong>31,61 %</strong></p>
+
+<div id="by-faculties"></div>
 
 <p>
   Vuoteen 2011 saakka muiden ylioppilaskuntien edustajistovaalit olivat samana vuonna HYYn vaalien
