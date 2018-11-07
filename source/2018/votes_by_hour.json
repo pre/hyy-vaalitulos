@@ -1,0 +1,284 @@
+{
+  "name": "Äänten lukumäärä tunneittain",
+  "year": 2018,
+  "created_at": "2018-11-07T18:07:05.282+02:00",
+  "children": {
+    "votes": [
+      {
+        "time": "2018-10-31 10:59",
+        "hourly_count": 653,
+        "cumulative_count": 653
+      },
+      {
+        "time": "2018-10-31 11:59",
+        "hourly_count": 380,
+        "cumulative_count": 1033
+      },
+      {
+        "time": "2018-10-31 12:59",
+        "hourly_count": 371,
+        "cumulative_count": 1404
+      },
+      {
+        "time": "2018-10-31 13:59",
+        "hourly_count": 296,
+        "cumulative_count": 1700
+      },
+      {
+        "time": "2018-10-31 14:59",
+        "hourly_count": 214,
+        "cumulative_count": 1914
+      },
+      {
+        "time": "2018-10-31 15:59",
+        "hourly_count": 162,
+        "cumulative_count": 2076
+      },
+      {
+        "time": "2018-10-31 16:59",
+        "hourly_count": 124,
+        "cumulative_count": 2200
+      },
+      {
+        "time": "2018-10-31 17:59",
+        "hourly_count": 113,
+        "cumulative_count": 2313
+      },
+      {
+        "time": "2018-10-31 18:59",
+        "hourly_count": 1,
+        "cumulative_count": 2314
+      },
+      {
+        "time": "2018-11-1 10:59",
+        "hourly_count": 147,
+        "cumulative_count": 2461
+      },
+      {
+        "time": "2018-11-1 11:59",
+        "hourly_count": 114,
+        "cumulative_count": 2575
+      },
+      {
+        "time": "2018-11-1 12:59",
+        "hourly_count": 133,
+        "cumulative_count": 2708
+      },
+      {
+        "time": "2018-11-1 13:59",
+        "hourly_count": 127,
+        "cumulative_count": 2835
+      },
+      {
+        "time": "2018-11-1 14:59",
+        "hourly_count": 104,
+        "cumulative_count": 2939
+      },
+      {
+        "time": "2018-11-1 15:59",
+        "hourly_count": 85,
+        "cumulative_count": 3024
+      },
+      {
+        "time": "2018-11-1 16:59",
+        "hourly_count": 76,
+        "cumulative_count": 3100
+      },
+      {
+        "time": "2018-11-1 17:59",
+        "hourly_count": 70,
+        "cumulative_count": 3170
+      },
+      {
+        "time": "2018-11-1 18:59",
+        "hourly_count": 1,
+        "cumulative_count": 3171
+      },
+      {
+        "time": "2018-11-2 10:59",
+        "hourly_count": 87,
+        "cumulative_count": 3258
+      },
+      {
+        "time": "2018-11-2 11:59",
+        "hourly_count": 92,
+        "cumulative_count": 3350
+      },
+      {
+        "time": "2018-11-2 12:59",
+        "hourly_count": 121,
+        "cumulative_count": 3471
+      },
+      {
+        "time": "2018-11-2 13:59",
+        "hourly_count": 126,
+        "cumulative_count": 3597
+      },
+      {
+        "time": "2018-11-2 14:59",
+        "hourly_count": 108,
+        "cumulative_count": 3705
+      },
+      {
+        "time": "2018-11-2 15:59",
+        "hourly_count": 114,
+        "cumulative_count": 3819
+      },
+      {
+        "time": "2018-11-2 16:59",
+        "hourly_count": 92,
+        "cumulative_count": 3911
+      },
+      {
+        "time": "2018-11-2 17:59",
+        "hourly_count": 78,
+        "cumulative_count": 3989
+      },
+      {
+        "time": "2018-11-2 18:59",
+        "hourly_count": 1,
+        "cumulative_count": 3990
+      },
+      {
+        "time": "2018-11-5 10:59",
+        "hourly_count": 100,
+        "cumulative_count": 4090
+      },
+      {
+        "time": "2018-11-5 11:59",
+        "hourly_count": 98,
+        "cumulative_count": 4188
+      },
+      {
+        "time": "2018-11-5 12:59",
+        "hourly_count": 121,
+        "cumulative_count": 4309
+      },
+      {
+        "time": "2018-11-5 13:59",
+        "hourly_count": 102,
+        "cumulative_count": 4411
+      },
+      {
+        "time": "2018-11-5 14:59",
+        "hourly_count": 108,
+        "cumulative_count": 4519
+      },
+      {
+        "time": "2018-11-5 15:59",
+        "hourly_count": 68,
+        "cumulative_count": 4587
+      },
+      {
+        "time": "2018-11-5 16:59",
+        "hourly_count": 69,
+        "cumulative_count": 4656
+      },
+      {
+        "time": "2018-11-5 17:59",
+        "hourly_count": 84,
+        "cumulative_count": 4740
+      },
+      {
+        "time": "2018-11-5 18:59",
+        "hourly_count": 1,
+        "cumulative_count": 4741
+      },
+      {
+        "time": "2018-11-6 10:59",
+        "hourly_count": 173,
+        "cumulative_count": 4914
+      },
+      {
+        "time": "2018-11-6 11:59",
+        "hourly_count": 146,
+        "cumulative_count": 5060
+      },
+      {
+        "time": "2018-11-6 12:59",
+        "hourly_count": 139,
+        "cumulative_count": 5199
+      },
+      {
+        "time": "2018-11-6 13:59",
+        "hourly_count": 122,
+        "cumulative_count": 5321
+      },
+      {
+        "time": "2018-11-6 14:59",
+        "hourly_count": 110,
+        "cumulative_count": 5431
+      },
+      {
+        "time": "2018-11-6 15:59",
+        "hourly_count": 155,
+        "cumulative_count": 5586
+      },
+      {
+        "time": "2018-11-6 16:59",
+        "hourly_count": 208,
+        "cumulative_count": 5794
+      },
+      {
+        "time": "2018-11-6 17:59",
+        "hourly_count": 180,
+        "cumulative_count": 5974
+      },
+      {
+        "time": "2018-11-6 18:59",
+        "hourly_count": 1,
+        "cumulative_count": 5975
+      },
+      {
+        "time": "2018-11-7 10:59",
+        "hourly_count": 456,
+        "cumulative_count": 6431
+      },
+      {
+        "time": "2018-11-7 11:59",
+        "hourly_count": 366,
+        "cumulative_count": 6797
+      },
+      {
+        "time": "2018-11-7 12:59",
+        "hourly_count": 395,
+        "cumulative_count": 7192
+      },
+      {
+        "time": "2018-11-7 13:59",
+        "hourly_count": 341,
+        "cumulative_count": 7533
+      },
+      {
+        "time": "2018-11-7 14:59",
+        "hourly_count": 295,
+        "cumulative_count": 7828
+      },
+      {
+        "time": "2018-11-7 15:59",
+        "hourly_count": 249,
+        "cumulative_count": 8077
+      },
+      {
+        "time": "2018-11-7 16:59",
+        "hourly_count": 286,
+        "cumulative_count": 8363
+      },
+      {
+        "time": "2018-11-7 17:59",
+        "hourly_count": 332,
+        "cumulative_count": 8695
+      },
+      {
+        "time": "2018-11-7 18:59",
+        "hourly_count": 5,
+        "cumulative_count": 8700
+      }
+    ],
+    "total": {
+      "vote_count": 8700,
+      "voter_count": 26156,
+      "percentage": 33.26
+    }
+  }
+}
