@@ -25,6 +25,8 @@ HYYn vaalitulospalvelu
 
 - Setup AWS credentials in `_jekyll_s3.yml`
   - Example of contents: [_jekyll_s3.yml.example](_jekyll_s3.yml.example)
+  - Test environment: https://vaalitulos-staging.s3.amazonaws.com/index.html
+  - Production environment: http://vaalitulos.hyy.fi/
 
 - Deploy:
   `bin/deploy`
