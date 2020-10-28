@@ -1,2 +1,4 @@
 _site
 _jekyll_s3.yml
+
+/source/.jekyll-cache/*
