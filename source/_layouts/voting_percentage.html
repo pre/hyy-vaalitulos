@@ -75,7 +75,7 @@ title: Edustajistovaalien äänestysprosentti
 
       function drawByFaculties(jsonData) {
         rows = [];
-        rows.push(['Tiedekunta', 'Ääniä', 'Äänestäjiä', 'Äänestysprosentti']);
+        rows.push(['Tiedekunta', 'Äänestäjiä', 'Ääniä', 'Äänestysprosentti']);
 
         jsonData["children"]["faculties"].map((faculty) => {
           rows.push([faculty.name, faculty.voter_count, faculty.voted_count, faculty.percentage])
