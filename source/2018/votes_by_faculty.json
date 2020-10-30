@@ -7,79 +7,79 @@
       {
         "name": "Eläinlääketieteellinen",
         "voter_count": 480,
-        "voted_count": 304,
+        "vote_count": 304,
         "percentage": 63.33
       },
       {
         "name": "Svenska social- och kommunalhögskolan",
         "voter_count": 425,
-        "voted_count": 224,
+        "vote_count": 224,
         "percentage": 52.71
       },
       {
         "name": "Lääketieteellinen",
         "voter_count": 2026,
-        "voted_count": 1016,
+        "vote_count": 1016,
         "percentage": 50.15
       },
       {
         "name": "Valtiotieteellinen",
         "voter_count": 3123,
-        "voted_count": 1276,
+        "vote_count": 1276,
         "percentage": 40.86
       },
       {
         "name": "Oikeustieteellinen",
         "voter_count": 2231,
-        "voted_count": 846,
+        "vote_count": 846,
         "percentage": 37.92
       },
       {
         "name": "Bio- ja ympäristötieteellinen",
         "voter_count": 1190,
-        "voted_count": 425,
+        "vote_count": 425,
         "percentage": 35.71
       },
       {
         "name": "Viikin laaja-alaiset koulutukset",
         "voter_count": 159,
-        "voted_count": 54,
+        "vote_count": 54,
         "percentage": 33.96
       },
       {
         "name": "Käyttäytymistieteellinen",
         "voter_count": 2763,
-        "voted_count": 831,
+        "vote_count": 831,
         "percentage": 30.08
       },
       {
         "name": "Matemaattis-luonnontieteellinen",
         "voter_count": 4507,
-        "voted_count": 1337,
+        "vote_count": 1337,
         "percentage": 29.66
       },
       {
         "name": "Teologinen",
         "voter_count": 1326,
-        "voted_count": 361,
+        "vote_count": 361,
         "percentage": 27.22
       },
       {
         "name": "Humanistinen",
         "voter_count": 4831,
-        "voted_count": 1253,
+        "vote_count": 1253,
         "percentage": 25.94
       },
       {
         "name": "Maatalous-metsätieteellinen",
         "voter_count": 2296,
-        "voted_count": 585,
+        "vote_count": 585,
         "percentage": 25.48
       },
       {
         "name": "Farmasia",
         "voter_count": 791,
-        "voted_count": 185,
+        "vote_count": 185,
         "percentage": 23.39
       }
     ],
