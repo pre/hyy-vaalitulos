@@ -28,15 +28,28 @@ title: Äänestäjät ajanhetken mukaan
     return Math.round(percentage * 100) / 100;
   }
 
+  function annotation(counter, row, lastAnnotation) {
+    if (counter > lastAnnotation.value) {
+      let annotation = '>' + lastAnnotation.value;
+      lastAnnotation.value += 1000;
+
+      return annotation;
+    }
+
+    return null;
+  }
+
   function addRowsFromJson(jsonData, chartData) {
     var rowArray = new Array;
+    let lastAnnotation = { value: 1000 };
 
     for (var i = 0; i < jsonData.children.votes.length; i++) {
       var row = jsonData.children.votes[i];
       rowArray.push([
         row.time,
         row.hourly_count,
-        roundedVotingPercentage(row.cumulative_count, jsonData.children.total["voter_count"])
+        roundedVotingPercentage(row.cumulative_count, jsonData.children.total["voter_count"]),
+        annotation(row.cumulative_count, row, lastAnnotation)
       ]);
     }
 
@@ -52,6 +65,7 @@ title: Äänestäjät ajanhetken mukaan
     data.addColumn('string', 'Tunti');
     data.addColumn('number', 'Ääniä tunnissa');
     data.addColumn('number', 'Äänestysprosentti');
+    data.addColumn({ type: 'string', role: 'annotation' });
 
     addRowsFromJson(jsonData, data);
 
@@ -117,6 +131,7 @@ title: Äänestäjät ajanhetken mukaan
   <li>Ääniä annettu: <span id="summary-total-vote-count"></span></li>
   <li>Äänestäjiä: <span id="summary-total-voter-count"></span></li>
   <li>Äänestysprosentti: <span id="summary-total-voting-percentage"></span></li>
+  <li>Kuvaajaan on annotoitu tunnit, joissa äänten määrä on kasvanut 1000:lla.</li>
   <li>Tilasto luotu: <span id="summary-total-created-at"></span></li>
 </ul>
 
