@@ -22,6 +22,12 @@ title: Äänestäjät ajanhetken mukaan
     );
   }
 
+  function roundedVotingPercentage(votes, total) {
+    let percentage = 100.0 * votes / total;
+
+    return Math.round(percentage * 100) / 100;
+  }
+
   function addRowsFromJson(jsonData, chartData) {
     var rowArray = new Array;
 
@@ -30,7 +36,7 @@ title: Äänestäjät ajanhetken mukaan
       rowArray.push([
         row.time,
         row.hourly_count,
-        100.0 * (row.cumulative_count / jsonData.children.total["voter_count"])
+        roundedVotingPercentage(row.cumulative_count, jsonData.children.total["voter_count"])
       ]);
     }
 
@@ -80,7 +86,7 @@ title: Äänestäjät ajanhetken mukaan
     rows.push(['Tiedekunta', 'Äänestysprosentti']);
 
     jsonData["children"]["faculties"].map((faculty) => {
-      rows.push([faculty.name, faculty.percentage])
+      rows.push([faculty.name, Math.round(faculty.percentage)])
     });
 
     var data = google.visualization.arrayToDataTable(rows);
@@ -117,8 +123,3 @@ title: Äänestäjät ajanhetken mukaan
 <h2>Tilasto tiedekunnittain</h2>
 
 <div id="by-faculties-percentage-only"></div>
-
-<p>
-  Tiedekuntakohtainen äänestysprosentti pyöristetään vaalien aikana ylöspäin lähimpään kokonaislukuun.
-  Tarkempi äänestysprosentti julkistetaan vasta äänestyksen päätyttyä.
-</p>
