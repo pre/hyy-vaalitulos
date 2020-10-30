@@ -172,12 +172,9 @@ d3.json(discoverJsonUrl("result.json"), function(root) {
   }
 
   function setCreatedAt(timestamp) {
-    datetime = new Date(timestamp);
-
     $(".result#created-at time").each(function(index) {
       $(this).attr("datetime", timestamp);
-      // TODO: Listen to change event on time element to decouple updating
-      $(this).html( datetime.toLocaleDateString() + " " + datetime.toLocaleTimeString() );
+      $(this).html(helsinkiDateTime(timestamp));
     });
   }
 

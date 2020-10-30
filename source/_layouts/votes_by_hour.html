@@ -54,7 +54,7 @@ title: Äänestäjät ajanhetken mukaan
     }
 
     chartData.addRows(rowArray);
-    document.getElementById("summary-total-created-at").innerText = new Date(jsonData.created_at).toISOString();
+    document.getElementById("summary-total-created-at").innerText = helsinkiDateTime(jsonData.created_at);
     document.getElementById("summary-total-vote-count").innerText = jsonData.children.total["vote_count"];
     document.getElementById("summary-total-voter-count").innerText = jsonData.children.total["voter_count"];
     document.getElementById("summary-total-voting-percentage").innerText = jsonData.children.total["percentage"];

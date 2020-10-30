@@ -46,7 +46,7 @@ title: Ehdokkaiden äänimäärät
     data.setValue(0,0,'Ääniä');
     addColumnsFromJson(jsonData, data, chartLabelElement);
 
-    var titleCountedAt = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
+    var titleCountedAt = "Laskettu: "+ helsinkiDateTime(jsonData["created_at"]);
 
     var options = { title: "TOP-100 äänestetyimmät",
                     width: 'auto', //760,

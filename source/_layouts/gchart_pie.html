@@ -43,7 +43,7 @@ title: "Edustajistopaikat ryhmittäin"
     data.addColumn('number', 'Slices');
     addRowsFromJson(jsonData, data, chartLabelElement);
 
-    var title = "Laskettu: "+ friendlyDateTime(jsonData["created_at"]);
+    var title = "Laskettu: "+ helsinkiDateTime(jsonData["created_at"]);
 
     var options = {'title':title,
                    titleTextStyle: {fontSize: '14', color: '#222'},
