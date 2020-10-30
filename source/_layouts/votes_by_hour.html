@@ -56,7 +56,56 @@ title: Äänestäjät ajanhetken mukaan
 
     var chart = new google.visualization.ComboChart(document.getElementById('chart'));
     chart.draw(data, options);
+
+    var jsonSourcePath = discoverJsonUrl("votes_by_faculty.json")
+    loadResultData(jsonSourcePath, drawByFacultiesPercentageOnly, displayChartLoadError);
+  }
+
+  function displayChartLoadError(e) {
+    console.error("Could not load json", e);
+  }
+
+  // Periodically updating statistics during the election.
+  // Complete stats per faculty are published after the election
+  // in "voting_percentage.html"
+  function drawByFacultiesPercentageOnly(jsonData) {
+    rows = [];
+    rows.push(['Tiedekunta', 'Äänestysprosentti']);
+
+    jsonData["children"]["faculties"].map((faculty) => {
+      rows.push([faculty.name, faculty.percentage])
+    });
+
+    var data = google.visualization.arrayToDataTable(rows);
+
+    var options = {
+      title: "Äänestysaktiivisuus tiedekunnittain 2018",
+      width: 'auto',
+      height: 350,
+      series: {
+        0: { targetAxisIndex: 0 },
+        1: { targetAxisIndex: 0 }
+      },
+      vAxes: {
+        0: { title: 'Ääniä' },
+        1: { title: 'Äänestysprosentti' }
+      }
+    };
+
+    var byFaculties = new google.visualization.ColumnChart(document.getElementById('by-faculties-percentage-only'));
+    byFaculties.draw(data, options);
   }
 </script>
 
- <div id="chart" style="width: 900px; height: 500px;"></div>
+<h2>Äänestysaktiivisuus</h2>
+
+<div id="chart" style="width: 900px; height: 500px;"></div>
+
+<h2>Tilasto tiedekunnittain</h2>
+
+<div id="by-faculties-percentage-only"></div>
+
+<p>
+  Tiedekuntakohtainen äänestysprosentti pyöristetään vaalien aikana ylöspäin lähimpään kokonaislukuun.
+  Tarkempi äänestysprosentti julkistetaan vasta äänestyksen päätyttyä.
+</p>

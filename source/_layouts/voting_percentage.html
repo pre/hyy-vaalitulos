@@ -69,10 +69,13 @@ title: Edustajistovaalien äänestysprosentti
         loadResultData(jsonSourcePath, drawByFaculties, displayChartLoadError);
       }
 
-      function displayChartLoadError() {
-        console.error("Could not load json :/");
+      function displayChartLoadError(e) {
+        console.error("Could not load json", e);
       }
 
+      // This chart is published after the elections when voter and vote count
+      // per faculty can be published. During the elections, only voting percentage
+      // per faculty is pubslished in "votes_by_hour.html"
       function drawByFaculties(jsonData) {
         rows = [];
         rows.push(['Tiedekunta', 'Äänestäjiä', 'Ääniä', 'Äänestysprosentti']);
