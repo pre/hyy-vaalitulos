@@ -210,8 +210,11 @@ body {
    background: #F2F1ED;
 }
 
+/** iframe scale is set in the media queries */
 iframe.result {
    width: 680px;
+   transform-origin: top left;
+   transform: scale(1.0);
    background: white;
    border: 0;
    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -313,6 +316,49 @@ ul.horizontal.pagenavi {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+
+/** RESULT SIZES */
+@media only screen and (max-width: 480px) {
+    iframe.result {
+        transform: scale(0.6);
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    iframe.result {
+        transform: scale(0.625);
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    iframe.result {
+        transform: scale(0.7);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    iframe.result {
+        transform: scale(0.8);
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    iframe.result {
+        transform: scale(0.9);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    iframe.result {
+        transform: scale(1.0);
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    iframe.result {
+        transform: scale(1.0);
+    }
+}
 
 @media only screen and (min-width: 480px) {
 
