@@ -22,8 +22,15 @@ title: HYYn edustajistovaalitulos
 <h3>Vaalitulos</h3>
 
 <p>
-  Vaalituloksen suora osoite: <a href="/{{page.year}}/result.html">http://vaalitulos.hyy.fi/{{page.year}}/result.html</a>
-  [myös <a href="/about">JSON, CSV</a>]
+  <a href="/{{page.year}}/result.html">http://vaalitulos.hyy.fi/{{page.year}}/result.html</a>
+  [<a href="/about">JSON</a>]
 </p>
 
-<iframe src="result.html" class="result"></iframe>
+<script type="text/javascript">
+  function resizeIframe(iframe) {
+    const padding = 50;
+    iframe.height = (padding + iframe.contentWindow.document.body.scrollHeight) + "px";
+  }
+</script>
+
+<iframe onload="resizeIframe(this)" src="result.html" class="result"></iframe>
