@@ -27,6 +27,14 @@ title: HYYn edustajistovaalitulos
 </p>
 
 <script type="text/javascript">
+  function setIframeResizer(iframe) {
+    resizeIframe(iframe);
+
+    window.onresize = function () {
+      resizeIframe(iframe);
+    }
+  }
+
   function resizeIframe(iframe) {
     const padding = 50;
     iframe.height = (padding + iframe.contentWindow.document.body.scrollHeight) + "px";
@@ -34,6 +42,13 @@ title: HYYn edustajistovaalitulos
 </script>
 
 <iframe
-  onload="resizeIframe(this)"
+  onload="setIframeResizer(this)"
   src="result.html"
   class="result"></iframe>
+
+<div class="result-placeholder-small-screen">
+  <p>
+    Selaimen ruutukoko on liian kapea vaalituloksen esittämiseksi.
+    Avaa vaalitulos yllä näkyvästä linkistä.
+  </p>
+</div>

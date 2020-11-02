@@ -318,27 +318,23 @@ ul.horizontal.pagenavi {
    ========================================================================== */
 
 /** RESULT SIZES */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 680px) {
     iframe.result {
-        transform: scale(0.6);
+        display: none;
+    }
+
+    div.result-placeholder-small-screen {
+        display: block;
     }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 680px) {
     iframe.result {
-        transform: scale(0.625);
+        display: inline;
     }
-}
 
-@media only screen and (min-width: 560px) {
-    iframe.result {
-        transform: scale(0.7);
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    iframe.result {
-        transform: scale(0.8);
+    div.result-placeholder-small-screen {
+        display: none;
     }
 }
 
