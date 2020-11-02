@@ -71,6 +71,8 @@ title: Äänestäjät ajanhetken mukaan
 
     var options = {
       title: 'Äänestäneiden lukumäärä per tunti',
+      legend: { position: 'top' },
+      width: 'auto',
       vAxis: { gridlines: { count: 4 } },
       vAxes: {
         0: { logScale: false, title: 'Ääniä tunnissa' },
@@ -107,6 +109,7 @@ title: Äänestäjät ajanhetken mukaan
 
     var options = {
       title: "Äänestysaktiivisuus tiedekunnittain",
+      legend: { position: 'top' },
       width: 'auto',
       height: 350,
       series: {
