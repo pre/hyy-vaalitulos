@@ -40,13 +40,8 @@
         "cumulative_count": 2200
       },
       {
-        "time": "2018-10-31 17:59",
-        "hourly_count": 113,
-        "cumulative_count": 2313
-      },
-      {
         "time": "2018-10-31 18:05",
-        "hourly_count": 1,
+        "hourly_count": 114,
         "cumulative_count": 2314
       },
       {
@@ -85,13 +80,8 @@
         "cumulative_count": 3100
       },
       {
-        "time": "2018-11-1 17:59",
-        "hourly_count": 70,
-        "cumulative_count": 3170
-      },
-      {
         "time": "2018-11-1 18:05",
-        "hourly_count": 1,
+        "hourly_count": 71,
         "cumulative_count": 3171
       },
       {
@@ -130,13 +120,8 @@
         "cumulative_count": 3911
       },
       {
-        "time": "2018-11-2 17:59",
-        "hourly_count": 78,
-        "cumulative_count": 3989
-      },
-      {
         "time": "2018-11-2 18:05",
-        "hourly_count": 1,
+        "hourly_count": 79,
         "cumulative_count": 3990
       },
       {
@@ -175,13 +160,8 @@
         "cumulative_count": 4656
       },
       {
-        "time": "2018-11-5 17:59",
-        "hourly_count": 84,
-        "cumulative_count": 4740
-      },
-      {
         "time": "2018-11-5 18:05",
-        "hourly_count": 1,
+        "hourly_count": 85,
         "cumulative_count": 4741
       },
       {
@@ -220,13 +200,8 @@
         "cumulative_count": 5794
       },
       {
-        "time": "2018-11-6 17:59",
-        "hourly_count": 180,
-        "cumulative_count": 5974
-      },
-      {
         "time": "2018-11-6 18:05",
-        "hourly_count": 1,
+        "hourly_count": 181,
         "cumulative_count": 5975
       },
       {
@@ -265,13 +240,8 @@
         "cumulative_count": 8363
       },
       {
-        "time": "2018-11-7 17:59",
-        "hourly_count": 332,
-        "cumulative_count": 8695
-      },
-      {
         "time": "2018-11-7 18:05",
-        "hourly_count": 5,
+        "hourly_count": 337,
         "cumulative_count": 8700
       }
     ],
