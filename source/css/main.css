@@ -318,7 +318,7 @@ ul.horizontal.pagenavi {
    ========================================================================== */
 
 /** RESULT SIZES */
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 800px) {
     iframe.result {
         display: none;
     }
@@ -328,7 +328,7 @@ ul.horizontal.pagenavi {
     }
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 801px) {
     iframe.result {
         display: inline;
     }
