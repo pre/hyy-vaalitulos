@@ -2,15 +2,12 @@
 
 set -e
 
-echo "Deploying to:"
-echo -n "  "
-cat _jekyll_s3.yml |grep -v '^\#' |grep s3_bucket
-echo ""
+BUCKET="${1:-vaalitulos-staging}"
+
+echo "Deploying to: $BUCKET"
 echo "Ensure you don't have 'jekyll watch' running."
-echo ""
-echo "Continue?"
-read wat
+read -p "Continue? " wat
 
 jekyll build
-
-jekyll-s3
+# ponytail: no --delete on purpose — old election results exist only in S3
+aws s3 sync _site/ "s3://$BUCKET/"

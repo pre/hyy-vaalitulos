@@ -28,15 +28,26 @@ HYYn vaalitulospalvelu
 - Start Jekyll server for development:
   `bin/serve`
 
-- Setup AWS credentials in `_jekyll_s3.yml`
-  - Example of contents: [_jekyll_s3.yml.example](_jekyll_s3.yml.example)
+- Setup AWS credentials for aws-cli (`brew install awscli`):
+  - Run `aws configure`, or create `~/.aws/credentials` manually:
+
+    ```ini
+    [default]
+    aws_access_key_id = AKIAXXXXXXXXXXXXXXXX
+    aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    ```
+
+    These are the same values previously stored in `_jekyll_s3.yml` as
+    `s3_id` / `s3_secret`. To keep the keys separate from other AWS
+    accounts, use a named profile instead of `[default]` (e.g.
+    `[hyy-vaalitulos]`) and deploy with
+    `AWS_PROFILE=hyy-vaalitulos bin/deploy`.
   - Test environment: https://vaalitulos-staging.s3.amazonaws.com/index.html
   - Production environment: http://vaalitulos.hyy.fi/
 
 - Deploy:
-  `bin/deploy`
-
-  - Answer [K]eep all when asked about keeping old files:
-  `xyz/ is on S3 but not in your _site directory anymore. Do you want to [d]elete, [D]elete all, [k]eep, [K]eep all?`
-  - These are eg. old temporary result files, which are in S3 but not in
-    this repo.
+  `bin/deploy [bucket]`
+  - Defaults to `vaalitulos-staging`; production:
+    `bin/deploy vaalitulos.hyy.fi`
+  - Files that exist only in S3 (old election results) are never deleted:
+    the sync runs without `--delete`.
